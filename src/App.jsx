@@ -8,17 +8,26 @@ function App() {
   const dispatch = useDispatch();
 
   const handleAddTodo = () => {
-    if (text.trim()) {
-      dispatch(addTodo(text));
-      setText("");
-    }
+    dispatch(addTodo(text));
+    setText("");
   };
 
   return (
-    <div style={{ padding: "20px" }}>
+    <div
+      style={{
+        height: "100vh",
+        width: "90vw",
+        padding: "20px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        // justifyContent: "center",
+      }}
+    >
       <h1>Todo App</h1>
       <div style={{ marginBottom: "10px" }}>
         <input
+          style={{ marginRight: "10px", padding: "10px" }}
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
